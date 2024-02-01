@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.0.8/20017
 // Filename: ???? ??? ??.ggsk
-// Generated 2024-01-31T11:32:21
+// Generated 2024-02-01T13:44:05
 
 function pano2vrSkin(player,base) {
 	player.addVariable('vis_roomchoice', 2, false, { ignoreInState: 0  });
@@ -18542,7 +18542,7 @@ function pano2vrSkin(player,base) {
 		el.ggSubElement = els;
 		el.ggId="map_pin_normal2";
 		el.ggDx=0;
-		el.ggDy=20;
+		el.ggDy=-20;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_image ";
@@ -18552,7 +18552,7 @@ function pano2vrSkin(player,base) {
 		hs+='height : 44px;';
 		hs+='left : calc(50% - ((38px + 0px) / 2) + 0px);';
 		hs+='position : absolute;';
-		hs+='top : calc(50% - ((44px + 0px) / 2) + 20px);';
+		hs+='top : calc(50% - ((44px + 0px) / 2) - 20px);';
 		hs+='visibility : inherit;';
 		hs+='width : 38px;';
 		hs+='pointer-events:auto;';
@@ -18570,6 +18570,31 @@ function pano2vrSkin(player,base) {
 			}
 			return me.ggNodeId;
 		}
+		me._map_pin_normal2.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getViewerSize().width <= 640))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._map_pin_normal2.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._map_pin_normal2.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._map_pin_normal2.style.transition='left 0s, top 0s, width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
+				if (me._map_pin_normal2.ggCurrentLogicStatePosition == 0) {
+					me._map_pin_normal2.style.left = 'calc(50% - (38px / 2))';
+					me._map_pin_normal2.style.top = 'calc(50% - (44px / 2) + (0px / 2) + -10px)';
+				}
+				else {
+					me._map_pin_normal2.style.left='calc(50% - ((38px + 0px) / 2) + 0px)';
+					me._map_pin_normal2.style.top='calc(50% - ((44px + 0px) / 2) - 20px)';
+				}
+			}
+		}
+		me._map_pin_normal2.logicBlock_position();
 		me._map_pin_normal2.logicBlock_size = function() {
 			var newLogicStateSize;
 			if (
@@ -18583,19 +18608,19 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._map_pin_normal2.ggCurrentLogicStateSize != newLogicStateSize) {
 				me._map_pin_normal2.ggCurrentLogicStateSize = newLogicStateSize;
-				me._map_pin_normal2.style.transition='width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
+				me._map_pin_normal2.style.transition='left 0s, top 0s, width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
 				if (me._map_pin_normal2.ggCurrentLogicStateSize == 0) {
 					me._map_pin_normal2.style.width='16px';
 					me._map_pin_normal2.style.height='22px';
 					me._map_pin_normal2.style.left = 'calc(50% - (16px / 2))';
-					me._map_pin_normal2.style.top = 'calc(50% - (22px / 2) + (0px / 2) + 20px)';
+					me._map_pin_normal2.style.top = 'calc(50% - (22px / 2) + (0px / 2) + -20px)';
 					skin.updateSize(me._map_pin_normal2);
 				}
 				else {
 					me._map_pin_normal2.style.width='38px';
 					me._map_pin_normal2.style.height='44px';
 					me._map_pin_normal2.style.left = 'calc(50% - (38px / 2))';
-					me._map_pin_normal2.style.top = 'calc(50% - (44px / 2) + (0px / 2) + 20px)';
+					me._map_pin_normal2.style.top = 'calc(50% - (44px / 2) + (0px / 2) + -20px)';
 					skin.updateSize(me._map_pin_normal2);
 				}
 			}
@@ -18614,7 +18639,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._map_pin_normal2.ggCurrentLogicStateScaling != newLogicStateScaling) {
 				me._map_pin_normal2.ggCurrentLogicStateScaling = newLogicStateScaling;
-				me._map_pin_normal2.style.transition='width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
+				me._map_pin_normal2.style.transition='left 0s, top 0s, width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
 				if (me._map_pin_normal2.ggCurrentLogicStateScaling == 0) {
 					me._map_pin_normal2.ggParameter.sx = 1.2;
 					me._map_pin_normal2.ggParameter.sy = 1.1;
@@ -18643,7 +18668,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._map_pin_normal2.ggCurrentLogicStateAlpha != newLogicStateAlpha) {
 				me._map_pin_normal2.ggCurrentLogicStateAlpha = newLogicStateAlpha;
-				me._map_pin_normal2.style.transition='width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
+				me._map_pin_normal2.style.transition='left 0s, top 0s, width 0s, height 0s, transform 200ms ease 0ms, opacity 500ms ease 0ms';
 				if (me._map_pin_normal2.ggCurrentLogicStateAlpha == 0) {
 					setTimeout(function() { if (me._map_pin_normal2.style.opacity == 0.0) { me._map_pin_normal2.style.visibility="hidden"; } }, 505);
 					me._map_pin_normal2.style.opacity=0;
@@ -18669,6 +18694,7 @@ function pano2vrSkin(player,base) {
 		me._map_pin_active2.logicBlock_size();
 		me._map_pin_active2.logicBlock_scaling();
 		me._map_pin_active2.logicBlock_alpha();
+		me._map_pin_normal2.logicBlock_position();
 		me._map_pin_normal2.logicBlock_size();
 		me._map_pin_normal2.logicBlock_scaling();
 		me._map_pin_normal2.logicBlock_alpha();
@@ -18678,6 +18704,7 @@ function pano2vrSkin(player,base) {
 			};
 			me.ggEvent_sizechanged=function() {
 				me._map_pin_active2.logicBlock_size();
+				me._map_pin_normal2.logicBlock_position();
 				me._map_pin_normal2.logicBlock_size();
 			};
 	};
